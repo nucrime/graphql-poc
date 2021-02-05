@@ -16,6 +16,8 @@ configurations {
 
 compileJava {
     options.compilerArgs += ['--enable-preview'] // for the record =)
+    options.annotationProcessorPath = configurations.annotationProcessor // for mapStruct
+    options.compilerArgs << "-Amapstruct.defaultComponentModel=spring" // for mapStruct
 }
 
 repositories {

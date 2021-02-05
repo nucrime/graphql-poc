@@ -1,4 +1,33 @@
-##links
+## HOW TO RUN
+$ docker-compose up
+
+gradlew bootRun
+
+To create a mutation
+
+````
+mutation {
+    writePost(post: {
+        title: "title",
+        description: "description",
+        category: "category",
+        author: {
+            id: 10,
+            name: "name"
+        }
+}) {
+        id
+    }
+}
+````
+
+https://graphql.org/graphql-js/mutations-and-input-types/
+
+##GraphQL course
+https://www.howtographql.com/
+
+
+### other links
 
 https://www.baeldung.com/jpa-limit-query-results
 https://stackoverflow.com/questions/30217552/spring-data-pageable-and-limit-offset

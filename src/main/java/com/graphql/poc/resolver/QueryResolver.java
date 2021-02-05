@@ -1,10 +1,8 @@
 package com.graphql.poc.resolver;
 
 import com.graphql.poc.dto.PostRecord;
-import com.graphql.poc.model.Author;
-import com.graphql.poc.model.Post;
 import com.graphql.poc.service.PostService;
-import graphql.kickstart.tools.GraphQLResolver;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +10,10 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class PostResolver implements GraphQLResolver<Post> {
+public class QueryResolver implements GraphQLQueryResolver {
     private final PostService service;
 
-    public List<PostRecord> postsByAuthor(final Author author) {
-        return service.byAuthor(author.getId());
+    public List<PostRecord> recentPosts(final Integer size) {
+        return service.recent(size);
     }
 }
