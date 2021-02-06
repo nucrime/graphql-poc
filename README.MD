@@ -1,4 +1,6 @@
 ## HOW TO RUN
+make sure java 15 and docker are installed and path environment properties for them are set 
+
 $ docker-compose up
 
 gradlew bootRun

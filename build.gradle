@@ -7,6 +7,7 @@ plugins {
 group = 'com.graphql'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '15'
+targetCompatibility = '15'
 
 configurations {
     compileOnly {
@@ -15,9 +16,13 @@ configurations {
 }
 
 compileJava {
-    options.compilerArgs += ['--enable-preview'] // for the record =)
+    options.compilerArgs << "--enable-preview" // for the record =)
     options.annotationProcessorPath = configurations.annotationProcessor // for mapStruct
     options.compilerArgs << "-Amapstruct.defaultComponentModel=spring" // for mapStruct
+}
+
+tasks.named("bootRun") {
+    it.dependsOn("compileJava")
 }
 
 repositories {
