@@ -1,6 +1,6 @@
 {
   "name": "Challenger GraphQL Schema",
-  "schemaPath": "challenger.graphql",
+  "schemaPath": "challenger.graphqls",
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {

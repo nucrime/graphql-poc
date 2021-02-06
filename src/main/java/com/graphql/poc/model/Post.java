@@ -18,7 +18,7 @@ public class Post {
     private Long id;
     private String title;
     private String description;
-    private String category;
+    private String tags;
     @ManyToOne
     private Author author;
     @CreationTimestamp

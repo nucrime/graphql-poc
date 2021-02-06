@@ -7,17 +7,17 @@ To create a mutation
 
 ````
 mutation {
-    writePost(post: {
-        title: "title",
-        description: "description",
-        category: "category",
-        author: {
-            id: 10,
-            name: "name"
-        }
-}) {
-        id
+  writePost(post: {
+    title: "title",
+    description: "description",
+    tags: "tags",
+    author: {
+      id: 10,
+      name: "name"
     }
+  }) {
+    id
+  }
 }
 ````
 

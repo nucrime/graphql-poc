@@ -5,6 +5,6 @@ import java.time.ZonedDateTime;
 public record PostRecord(Long id,
                          String title,
                          String description,
-                         String category,
+                         String tags,
                          AuthorRecord author,
                          ZonedDateTime created) {}

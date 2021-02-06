@@ -1,15 +1,15 @@
-CREATE TABLE IF NOT EXISTS author
+create table if not exists author
 (
-    id   bigint      not null,
+    id   serial      not null,
     name varchar(20) not null
 );
 
-CREATE TABLE IF NOT EXISTS post
+create table if not exists post
 (
-    id          bigint      not null,
+    id          serial      not null,
     title       varchar(50) not null,
     description text        not null,
     tags        text        not null default '#sport',
-    authorId    bigint      not null,
+    author_id   bigint      not null,
     created     date        not null default now()
 );
