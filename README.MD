@@ -5,6 +5,8 @@ $ docker-compose up
 
 gradlew bootRun
 
+open http://localhost:8080/graphiql
+
 To create a mutation
 
 ````

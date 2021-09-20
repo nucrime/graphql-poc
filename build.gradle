@@ -1,13 +1,13 @@
 plugins {
-    id 'org.springframework.boot' version '2.4.2'
+    id 'org.springframework.boot' version '2.5.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
 group = 'com.graphql'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '15'
-targetCompatibility = '15'
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -16,7 +16,7 @@ configurations {
 }
 
 compileJava {
-    options.compilerArgs << "--enable-preview" // for the record =)
+//    options.compilerArgs << "--enable-preview" // for the record =)
     options.annotationProcessorPath = configurations.annotationProcessor // for mapStruct
     options.compilerArgs << "-Amapstruct.defaultComponentModel=spring" // for mapStruct
 }
@@ -34,14 +34,11 @@ def mapstructVersion = '1.4.2.Final'
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation('org.springframework.boot:spring-boot-starter-web') {
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
-    }
+
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:11.0.0'
     implementation 'org.flywaydb:flyway-core'
     implementation "org.mapstruct:mapstruct:${mapstructVersion}"
 
-    compile 'org.springframework.boot:spring-boot-starter-undertow'
     compileOnly 'org.projectlombok:lombok'
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
