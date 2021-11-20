@@ -31,7 +31,6 @@ spring:
     url: "jdbc:postgresql://localhost:5432/challenger?currentSchema=challenger"
     username: "user"
     password: "P@55w0rd"
-    initialization-mode: never
     hikari:
       minimumIdle: 5
       maximumPoolSize: 21
@@ -48,3 +47,6 @@ spring:
     schemas: "challenger"
   jpa:
     open-in-view: off
+  sql:
+    init:
+      mode: never

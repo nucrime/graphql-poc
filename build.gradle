@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.5.4'
+    id 'org.springframework.boot' version '2.5.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -16,9 +16,8 @@ configurations {
 }
 
 compileJava {
-//    options.compilerArgs << "--enable-preview" // for the record =)
-    options.annotationProcessorPath = configurations.annotationProcessor // for mapStruct
-    options.compilerArgs << "-Amapstruct.defaultComponentModel=spring" // for mapStruct
+    options.annotationProcessorPath = configurations.annotationProcessor // for mapStruct to work with annotations
+    options.compilerArgs << "-Amapstruct.defaultComponentModel=spring" // for mapStruct to work with Spring
 }
 
 tasks.named("bootRun") {
